@@ -36,31 +36,3 @@ func (p *PlayerServer) showScore(w http.ResponseWriter, player string) {
 	}
 	fmt.Fprint(w, score)
 }
-
-type StubPlayerStore struct {
-	scores   map[string]int
-	winCalls []string
-}
-
-func (s *StubPlayerStore) GetPlayerScore(player string) int {
-	score := s.scores[player]
-	return score
-}
-
-func (s *StubPlayerStore) RecordWin(player string) {
-	s.winCalls = append(s.winCalls, player)
-}
-
-func GetPlayerScore(player string) int {
-
-	if player == "Marco" {
-		return 20
-	}
-
-	if player == "Francesco" {
-		return 10
-	}
-
-	return 0
-
-}
