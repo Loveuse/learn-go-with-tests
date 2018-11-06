@@ -18,7 +18,7 @@ func TestCLI(t *testing.T) {
 
 		poker.AssertPlayerWin(t, store, "Marco")
 	})
-	t.Run("record Marco victory", func(t *testing.T) {
+	t.Run("record Francesco victory", func(t *testing.T) {
 		in := strings.NewReader("Francesco wins\n")
 		store := &poker.StubPlayerStore{}
 
